@@ -12,6 +12,7 @@ import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
 import java.text.DecimalFormat;
 import java.util.Locale;
+import pl.mirco.util.DemoDataGenerator;
 
 //@Theme("mytheme")
 @Theme("runo")
@@ -31,7 +32,7 @@ public class Faktura extends UI {
         ZLOTOWKI.applyPattern(Faktura.FORMAT_WALUTY);
 
         //FIXME generowanie danych testowych -> usuń lub zakomentuj
-        //DemoDataGenerator.create();
+        DemoDataGenerator.create();
     }
 
     @WebServlet(value = "/*", asyncSupported = true)

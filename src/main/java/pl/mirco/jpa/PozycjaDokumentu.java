@@ -36,6 +36,14 @@ import javax.validation.constraints.Size;
 public class PozycjaDokumentu implements Serializable {
 
     private static final long serialVersionUID = 1L;
+
+    public PozycjaDokumentu() {
+    }
+
+    public PozycjaDokumentu(Integer lp) {
+        this.lp = lp;
+    }
+    
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -47,11 +55,11 @@ public class PozycjaDokumentu implements Serializable {
     public void setId(Long id) {
         this.id = id;
     }
-    
+
     @NotNull
     @ManyToOne
     private Dokument dokument;
-    
+
     @NotNull
     private Integer lp;
     @Size(min = 2, max = 128)
@@ -64,18 +72,17 @@ public class PozycjaDokumentu implements Serializable {
     @ManyToOne
     private JednostkaMiary jednostkaMiary;
     @NotNull
-    @Column(precision=10, scale=2)
+    @Column(precision = 10, scale = 2)
     private BigDecimal cenaNetto;
     @NotNull
     @OneToOne
     private StawkaVAT stawkaVAT;
-    @Column(precision=10, scale=2)
+    @Column(precision = 10, scale = 2)
     private BigDecimal wartoscNetto;
-    @Column(precision=10, scale=2)
+    @Column(precision = 10, scale = 2)
     private BigDecimal wartoscVAT;
-    @Column(precision=10, scale=2)
+    @Column(precision = 10, scale = 2)
     private BigDecimal wartoscBrutto;
-
 
     public Dokument getDokument() {
         return dokument;
