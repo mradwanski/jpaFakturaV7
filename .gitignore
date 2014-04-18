@@ -16,4 +16,5 @@ nbproject/
 *.war
 *.ear
 /target/
+nb-configuration.xml
 /src/main/webapp/VAADIN/widgetsets
